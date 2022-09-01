@@ -1,6 +1,8 @@
 {
     "name": "aryanhasanzadeh/dynamic-voting",
     "description": "This Package Manage Dynamic Rating and Commenting",
+    "keywords": ["vote", "voteing", "rateing", "commenting","php","laravel","rateing Manager","api","laravel","laravel-package"],
+    "homepage": "https://github.com/Aryanhasanzadeh/Dynamic-Voting",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -11,6 +13,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
+        "php": ">=7.4",
         "aryanhasanzadeh/translator": "dev-main"
     },
     "autoload": {
@@ -25,5 +28,10 @@
                 "Aryanhasanzadeh\\Voteing\\Providers\\VoteServiceProvider"
             ]
         }
+    },
+    "support": {
+        "issues": "https://github.com/Aryanhasanzadeh/Dynamic-Voting/issues",
+        "wiki": "https://github.com/Aryanhasanzadeh/Dynamic-Voting/wiki",
+        "source": "https://github.com/Aryanhasanzadeh/Dynamic-Voting"
     }
 }
