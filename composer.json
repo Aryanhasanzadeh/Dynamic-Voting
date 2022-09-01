@@ -1,0 +1,29 @@
+{
+    "name": "aryanhasanzadeh/dynamic-voting",
+    "description": "This Package Manage Dynamic Rating and Commenting",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aryan Hasanzadeh",
+            "email": "aryanhasanzadeh75@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "aryanhasanzadeh/translator": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aryanhasanzadeh\\Voteing\\": "src/",
+            "Aryanhasanzadeh\\Voteing\\Database\\Factories": "database/factories"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aryanhasanzadeh\\Voteing\\Providers\\VoteServiceProvider"
+            ]
+        }
+    }
+}
