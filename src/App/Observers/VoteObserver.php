@@ -2,7 +2,7 @@
 
 namespace Aryanhasanzadeh\Voteing\App\Observers;
 
-use Aryanhasanzadeh\Voteing\App\Jobs\UpdateVoteAvg;
+use Aryanhasanzadeh\Voteing\App\Jobs\UpdateVoteAvgJob;
 use Aryanhasanzadeh\Voteing\App\Models\Vote;
 
 
@@ -16,7 +16,7 @@ class VoteObserver
      */
     public function created(Vote $vote)
     {
-        dispatch((new UpdateVoteAvg($vote))->delay(2));
+        dispatch((new UpdateVoteAvgJob($vote))->delay(2));
     }
 
     /**

@@ -6,7 +6,7 @@ namespace Aryanhasanzadeh\Voteing\Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Aryanhasanzadeh\Voteing\App\Models\VoteTitle;
 
-class TranslateFactory extends Factory
+class VoteTitleFactory extends Factory
 {
 
     protected $model= VoteTitle::class;
