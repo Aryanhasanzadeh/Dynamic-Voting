@@ -7,6 +7,10 @@ use Aryanhasanzadeh\Voteing\App\Models\Repositories\VoteTitleRepository;
 use Aryanhasanzadeh\Voteing\App\Models\VoteTitle;
 use Illuminate\Http\Request;
 
+/**
+ * @group VoteTitle Manager
+*/
+
 class VoteTitleController extends ApiController
 {
     protected VoteTitleRepository $titleRepo;
@@ -17,10 +21,8 @@ class VoteTitleController extends ApiController
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+     * get list of vote titles
+    */
     public function index(Request $request)
     {
         try {
@@ -34,11 +36,11 @@ class VoteTitleController extends ApiController
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+     * store a new Vote Title
+     * 
+     * @bodyParam name string required the name 
+     * @bodyParam status id required the status 
+    */
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -58,11 +60,10 @@ class VoteTitleController extends ApiController
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     * get specified Vote Title
+     * 
+     * @urlParam id required the id of the Vote Title
+    */
     public function show(VoteTitle $title)
     {
         try {
@@ -77,12 +78,13 @@ class VoteTitleController extends ApiController
 
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     * Update the Specified  Vote Title
+     * 
+     * @urlParam id required the id of the vote title
+     * 
+     * @bodyParam name string required the name 
+     * @bodyParam status id required the status 
+    */
     public function update(Request $request,VoteTitle $title)
     {
         $this->validate($request,[
@@ -101,11 +103,12 @@ class VoteTitleController extends ApiController
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     * Remove the specified Vote Title
+     * 
+     * 
+     * @urlParam id integer required The ID of the Vote Title
+     * 
+    */
     public function destroy(VoteTitle $title)
     {
         try {

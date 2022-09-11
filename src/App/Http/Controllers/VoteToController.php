@@ -7,6 +7,10 @@ use Aryanhasanzadeh\Voteing\App\Models\Repositories\VoteToRepository;
 use Aryanhasanzadeh\Voteing\App\Models\VoteTo;
 use Illuminate\Http\Request;
 
+/**
+ * @group Vote Manager
+*/
+
 class VoteToController extends ApiController
 {
     private VoteToRepository $toRepo;
@@ -16,10 +20,11 @@ class VoteToController extends ApiController
         $this->toRepo = $toRepo;
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     /**
+     * get list of Vote by Vote Title Id
+     * 
+     * @bodyParam id int required the vote title id
+     * 
      */
     public function index(Request $request)
     {
@@ -39,11 +44,10 @@ class VoteToController extends ApiController
 
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     * get specified Vote 
+     * 
+     * @urlParam id required the id of the Vote 
+    */
     public function show(VoteTo $voteTo)
     {
         try {
@@ -58,12 +62,13 @@ class VoteToController extends ApiController
 
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     * Update the Specified  Vote 
+     * 
+     * @urlParam id required the id of the vote 
+     * 
+     * @bodyParam vote_title_id int required the id of vote title 
+     * @bodyParam status int required the status 
+    */
     public function update(Request $request, VoteTo $voteTo)
     {
         $this->validate($request,[
@@ -81,11 +86,12 @@ class VoteToController extends ApiController
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     * Remove the specified Vote 
+     * 
+     * 
+     * @urlParam id integer required The ID of the Vote 
+     * 
+    */
     public function destroy(VoteTo $voteTo)
     {
         try {
